@@ -1,5 +1,6 @@
 from unittest import skip
 from .base import FunctionalTest
+import time
 
 
 class ItemValidationTest(FunctionalTest):
@@ -12,6 +13,7 @@ class ItemValidationTest(FunctionalTest):
 
         # The home page refreshes, and there is an error message saying
         # That list items cannot be blank
+        time.sleep(5)
         error = self.browser.find_element_by_css_selector('.has-error')
         self.assertEqual(error.text, "You can't have an empty list item")
 
